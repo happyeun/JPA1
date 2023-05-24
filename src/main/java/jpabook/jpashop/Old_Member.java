@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @Getter @Setter
-public class Member {
+public class Old_Member {
     @Id @GeneratedValue
     private Long id;
     private String username;
