@@ -2,12 +2,11 @@ package jpabook.jpashop;
 
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 @Repository /* 스프링이 제공하는 기본 컴포넌트 대상. Repository안에 @Component가 있다. */
-public class MemberRepository {
+public class Old_MemberRepository {
     /* "Repository"
        엔티티 같은 것을 찾아준다. DAO랑 비슷하다.
      */
@@ -15,9 +14,9 @@ public class MemberRepository {
     @PersistenceContext  /* 스프링부트가 알아서 엔터티매니저를 주입시켜준다. */
     private EntityManager em;
 
-    public Long save(Member member){
-        em.persist(member);
-        return member.getId();
+    public Long save(Old_Member oldMember){
+        em.persist(oldMember);
+        return oldMember.getId();
         // 코딩 스타일
             /*
                 의문점: member객체를 반환하지 않고, id만 반환하는 이유
@@ -28,8 +27,8 @@ public class MemberRepository {
              */
     }
 
-    public Member find(Long id){
-        return em.find(Member.class, id);
+    public Old_Member find(Long id){
+        return em.find(Old_Member.class, id);
     }
 
     // 이후에 단위테스트 코드 만들기 :  단축키 Shift + Ctrl + T
