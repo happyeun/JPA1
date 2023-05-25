@@ -25,5 +25,11 @@ public class Member {
     @Embedded
     private Address address;
 
+    // 매핑되었음.
+    /* 
+        Order클래스 member필드에 의해 매핑되었음을 표시.
+        즉, Order클래스 쪽이 연관관계의 주인
+     */
+    @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 }
