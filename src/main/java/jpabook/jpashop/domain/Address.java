@@ -5,7 +5,10 @@ import lombok.Setter;
 
 import javax.persistence.Embeddable;
 
-@Embeddable /* 어노케이션: 다른 곳에 내장될 수 있다. 임베디드 타입이라는 뜻 */
+/* @Embeddable
+    다른 곳에 내장될 수 있다.
+    해당 클래스 임베디드 타입이라는 뜻 */
+@Embeddable
 @Getter @Setter
 public class Address {
 
